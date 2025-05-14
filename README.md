@@ -12,8 +12,8 @@ Adicionamos agora uma **válidação de dados mais segura**, utilizando métodos
   
 ---
 
-### 📟Github Pages Link: [Vinharia-Agnello](https://phsushi.github.io/vinharia-agnello/index)
-    https://phsushi.github.io/vinharia-agnello/index
+### 📟Github Pages Link: [Vinharia-Agnello](https://phsushi.github.io/vinheria-agnello-checkpoint02.v1.02/)
+    https://phsushi.github.io/vinheria-agnello-checkpoint02.v1.02/
 
 <p align="center">
     <img src="./src/assets/preview.jpeg" alt="Preview">
