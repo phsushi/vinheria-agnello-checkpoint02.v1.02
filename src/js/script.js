@@ -41,3 +41,29 @@ function mensagem_console(mensagem){
 alert("Você tem uma nova mensagem no console. Acesse-o para visualizar.")
 console.log(mensagem)
 }
+
+//declarando variaveis
+let add = "sim";
+cadastro = 0
+
+//laço do cadastro
+while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
+    let Nome = prompt("Qual o nome do vinho que você deseja cadastrar?");
+    while (!validado_dados(Nome)) {
+        Nome = prompt("Qual o nome do vinho que você deseja cadastrar?");
+    }
+
+    let safra = prompt("Qual é a safra do vinho: " + Nome);
+    while (!validado_dados(safra)) {
+        safra = prompt("Qual é a safra do vinho: " + Nome);
+    }
+    classifica_vinho(safra);
+
+    let estoque = prompt("Qual é o estoque do vinho: " + Nome);
+    while (!validado_dados(estoque)) {
+        estoque = prompt("Qual é o estoque do vinho: " + Nome);
+    }
+  
+    add = prompt("Deseja cadastrar outro vinho? (sim/não)");
+}
+
