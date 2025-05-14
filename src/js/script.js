@@ -46,7 +46,7 @@ console.log(mensagem)
 let add = "sim";
 cadastro = 0
 
-//laço do cadastro
+//cadastro de vinhos no terminal
 while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
     let Nome = prompt("Qual o nome do vinho que você deseja cadastrar?");
     while (!validado_dados(Nome)) {
@@ -63,7 +63,13 @@ while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
     while (!validado_dados(estoque)) {
         estoque = prompt("Qual é o estoque do vinho: " + Nome);
     }
-  
+
+    alert("vinho cadastrado")
+    console.log("O vinho: " + Nome + " de: "+ safra + " com estoque de: "+estoque +" unidades. Foi cadastrado.")
+    mensagem_console("classificado como: " + classifica_vinho(safra) + ", de estoque: " + verifica_estoque(estoque))
+    
+    cadastro ++
     add = prompt("Deseja cadastrar outro vinho? (sim/não)");
 }
 
+mensagem_console(cadastro + " cadastro(s) foram realizados")
