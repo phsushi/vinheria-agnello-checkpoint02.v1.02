@@ -16,5 +16,5 @@ Adicionamos agora uma **válidação de dados mais segura**, utilizando métodos
     https://phsushi.github.io/vinheria-agnello-checkpoint02.v1.02/
 
 <p align="center">
-    <img src="./src/assets/preview.jpeg" alt="Preview">
+    <img src="../vinheria-agnello-checkpoint02.v1.02/src/assets/video_de_demonstraçao.mp4" alt="Preview">
 </p>
