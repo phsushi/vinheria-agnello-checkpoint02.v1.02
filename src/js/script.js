@@ -65,7 +65,7 @@ while(true) {
         estoque = prompt("Qual é o estoque do vinho: " + Nome);
     }
 
-    mensagem_console(`O vinho: ${Nome} de: ${safra} com estoque de: ${estoque} unidades. Foi cadastrado. Classificado como: ${classifica_vinho(safra)}, de estoque: ${verifica_estoque(estoque)} `)
+    mensagem_console(`O vinho: ${Nome} da safra de: ${safra} com estoque de: ${estoque} unidades. Foi cadastrado. Classificado como: ${classifica_vinho(safra)}, de estoque: ${verifica_estoque(estoque)} `)
     cadastro ++
 
     add = prompt("Deseja cadastrar outro vinho? (sim/não)");
