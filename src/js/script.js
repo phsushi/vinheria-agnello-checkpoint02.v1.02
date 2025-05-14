@@ -69,7 +69,13 @@ while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
     mensagem_console("classificado como: " + classifica_vinho(safra) + ", de estoque: " + verifica_estoque(estoque))
     
     cadastro ++
+
     add = prompt("Deseja cadastrar outro vinho? (sim/não)");
+    while(add.toLowerCase() != "sim" && add.toLowerCase() != "não" && add.toLowerCase() != "n" && add.toLowerCase() != "s") {
+        add = ""
+        validado_dados(add)
+        add = prompt("Deseja cadastrar outro vinho? (sim/não)");
+    }
 }
 
 mensagem_console(cadastro + " cadastro(s) foram realizados")
