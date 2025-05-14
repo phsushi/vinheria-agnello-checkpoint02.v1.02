@@ -7,12 +7,12 @@ function validado_dados(dados){
         return true;
     }
 }
-
+let classificadosComoBaixo = 0;
 //função que verifica estoque baixo
 function verifica_estoque(estoque){
     let status = "";
     if(estoque < 5){
-        mensagem_console("Estoque Baixo!")
+        classificadosComoBaixo++
         status = "Baixo"
     }
     else{
@@ -45,9 +45,10 @@ console.log(mensagem)
 //declarando variaveis
 let add = "sim";
 cadastro = 0
-
+let vinhoSafraAntiga = "";
+let safraAntiga = 0;
 //cadastro de vinhos no terminal
-while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
+while(true) {
     let Nome = prompt("Qual o nome do vinho que você deseja cadastrar?");
     while (!validado_dados(Nome)) {
         Nome = prompt("Qual o nome do vinho que você deseja cadastrar?");
@@ -64,13 +65,30 @@ while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
         estoque = prompt("Qual é o estoque do vinho: " + Nome);
     }
 
-    alert("vinho cadastrado")
-    console.log("O vinho: " + Nome + " de: "+ safra + " com estoque de: "+estoque +" unidades. Foi cadastrado.")
-    mensagem_console("classificado como: " + classifica_vinho(safra) + ", de estoque: " + verifica_estoque(estoque))
-    
+    mensagem_console(`O vinho: ${Nome} de: ${safra} com estoque de: ${estoque} unidades. Foi cadastrado. Classificado como: ${classifica_vinho(safra)}, de estoque: ${verifica_estoque(estoque)} `)
     cadastro ++
 
     add = prompt("Deseja cadastrar outro vinho? (sim/não)");
+
+    while(add != "sim" && add != "não"){
+        alert("Use os comandos sim/não para prosseguir.")
+        add = prompt("Deseja cadastrar outro vinho? (sim/não)");
+    }
+
+    //Descobrindo o vinho com a safra mais antiga
+    if(vinhoSafraAntiga == ""){
+        vinhoSafraAntiga = Nome
+        safraAntiga = safra
+    }else{
+        if(safra < safraAntiga){
+            vinhoSafraAntiga = Nome
+            safraAntiga = safra;
+        }
+    }
+
+    if(add == "não"){
+        break
+    }
     while(add.toLowerCase() != "sim" && add.toLowerCase() != "não" && add.toLowerCase() != "n" && add.toLowerCase() != "s") {
         add = ""
         validado_dados(add)
@@ -78,4 +96,6 @@ while (add.toLowerCase() !== "não" && add.toLowerCase() !== "n") {
     }
 }
 
-mensagem_console(cadastro + " cadastro(s) foram realizados")
+
+mensagem_console(`${cadastro} cadastro(s) foram realizados.\nO vinho com a safra mais antiga é: ${vinhoSafraAntiga}\n${classificadosComoBaixo} vinhos tiveram o estoque classificado como Baixo`)
+
